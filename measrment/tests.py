@@ -34,4 +34,14 @@ class ConvertMeasurementsTest(TestCase):
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
 
+    def test_convert_invalid_payloas(self):
+        response = client.post(
+            reverse('measurements_api'),
+            data=json.dumps(self.invalid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        
+        
