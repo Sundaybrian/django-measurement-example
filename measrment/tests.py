@@ -34,6 +34,8 @@ class ConvertMeasurementsTest(TestCase):
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        print()
+        self.assertAlmostEqual(round(json.loads(response.data)['output'],5), 6.56168)
         
 
     def test_convert_invalid_payloas(self):

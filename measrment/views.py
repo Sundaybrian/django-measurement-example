@@ -24,7 +24,7 @@ class MeasurementAPI(APIView):
             outputStr=f'Distance({unit1}={val}).{unit2}'
 
             conversion = {
-                "output":eval(outputStr)
+                "output":float(eval(outputStr))
                 }
 
             res = json.dumps(conversion)
