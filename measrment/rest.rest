@@ -1,0 +1,8 @@
+POST http://localhost:8000/api/v1/measurements/
+Content-Type: application/json
+
+{
+    "val":6,
+    "unit_1":"m",
+    "unit_2":"cm"
+}
